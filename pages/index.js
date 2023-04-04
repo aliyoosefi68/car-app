@@ -1,10 +1,18 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+import carsData from "@/data/carsData";
+import CarsPage from "@/components/templates/CarsPage";
+import Categories from "@/components/module/Categories";
+import SearchBar from "@/components/module/SearchBar";
+import AllButton from "@/components/module/AllButton";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
-  return <></>;
+function Index() {
+  const cars = carsData.slice(0, 3);
+  return (
+    <>
+      <SearchBar />
+      <Categories />
+      <CarsPage data={cars} />
+      <AllButton />
+    </>
+  );
 }
+export default Index;
